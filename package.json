@@ -1,0 +1,21 @@
+{
+  "name": "blocks-vanilla-template",
+  "version": "0.0.0",
+  "license": "MIT",
+  "scripts": {
+    "start": "node scripts/start.mjs",
+    "build": "node scripts/build.js"
+  },
+  "dependencies": {
+    "@githubnext/blocks": "^2.3.4",
+    "@githubnext/blocks-runtime": "^1.0.0"
+  },
+  "devDependencies": {
+    "@sveltejs/vite-plugin-svelte": "^2.0.2",
+    "esbuild-svelte": "^0.7.3",
+    "svelte": "^3.55.0",
+    "svelte-preprocess": "^5.0.0",
+    "tsup": "^5.6.0",
+    "typescript": "^4.4.4"
+  }
+}

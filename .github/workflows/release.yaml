@@ -1,0 +1,25 @@
+name: Create Release
+on:
+  push:
+    tags:
+      - "*"
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Install dependencies
+        run: yarn install
+
+      - name: Compile assets
+        run: yarn build
+
+      - name: Create block tarballs
+        run: node ./release.ts
+
+      - name: Release
+        uses: softprops/action-gh-release@v1
+        with:
+          files: dist/*.tar.gz
