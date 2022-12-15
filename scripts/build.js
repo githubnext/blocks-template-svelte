@@ -37,7 +37,7 @@ const build = async () => {
       outfile: `dist/${block.id}/index.js`,
       format: "iife",
       plugins: [sveltePlugin({ preprocess: sveltePreprocess({}) })],
-      globalName: "SvelteBlockBundle",
+      globalName: "VanillaBlockBundle",
       minify: true,
       external: ["react", "react-dom"],
     });
