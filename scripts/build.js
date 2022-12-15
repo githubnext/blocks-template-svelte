@@ -13,10 +13,28 @@ const build = async () => {
   const blocksConfig = require(blocksConfigPath);
 
   const blockBuildFuncs = blocksConfig.map((block) => {
+    const stdin = {
+      resolveDir: process.cwd(),
+      contents: `
+    import Component from "./${block.entry}";
+
+    const root = document.getElementById("root");
+    let component;
+
+    export default (props) => {
+      if (component) {
+        component.$set(props);
+      } else {
+        component = new Component({ target: root, props });
+      }
+    };
+    `,
+    };
+
     return esbuild.build({
-      entryPoints: [`./` + block.entry],
+      stdin,
       bundle: true,
-      outdir: `dist/${block.id}`,
+      outfile: `dist/${block.id}/index.js`,
       format: "iife",
       plugins: [sveltePlugin({ preprocess: sveltePreprocess({}) })],
       globalName: "SvelteBlockBundle",
