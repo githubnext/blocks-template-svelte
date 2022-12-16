@@ -38,8 +38,8 @@ const build = async () => {
       format: "iife",
       plugins: [sveltePlugin({ preprocess: sveltePreprocess({}) })],
       globalName: "VanillaBlockBundle",
+      external: ["@githubnext/blocks"],
       minify: true,
-      external: ["react", "react-dom"],
     });
   });
 
