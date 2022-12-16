@@ -299,10 +299,10 @@
   resolved "https://registry.yarnpkg.com/@github/paste-markdown/-/paste-markdown-1.4.2.tgz#aedba0972536c2fc7944931b6e62bd43dc130592"
   integrity sha512-ZwSgPyo9nA6TRngXV0QnFT4e5ujeOGxRDWN2aa6qfimz2o2VOsJ9bFGuGvB723nvzq5z9zKr6JWGtvK7MSJj3w==
 
-"@githubnext/blocks-runtime@^1.0.0":
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/@githubnext/blocks-runtime/-/blocks-runtime-1.0.0.tgz#42287398c9fb9c2e43deba0402330c4d4ab38654"
-  integrity sha512-OfgpBYzRlkotUZ/SMDmH8qvmmT1c56yciv6rLIRPetaXP1LwtN/ZZf0ScS9qO3Jte9lBU4/WphhOv1NkcUzPoQ==
+"@githubnext/blocks-runtime@^1.0.3":
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/@githubnext/blocks-runtime/-/blocks-runtime-1.0.3.tgz#c80a67240f35d9f4c799b8f42db403a693026002"
+  integrity sha512-7eE6yLqfJm2upeqr6gb1MWm2cB/5XVTJ8QTcSTVMoSc2Svx1Kqq/GvFs/sfwsJ00C0aR2mF6Icftgg9SQ4c48A==
   dependencies:
     "@githubnext/blocks" "^2.3.4"
     "@primer/react" "^35.15.1"

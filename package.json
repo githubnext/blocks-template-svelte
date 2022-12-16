@@ -9,7 +9,7 @@
   "dependencies": {},
   "devDependencies": {
     "@githubnext/blocks": "^2.3.4",
-    "@githubnext/blocks-runtime": "^1.0.0",
+    "@githubnext/blocks-runtime": "^1.0.3",
     "@sveltejs/vite-plugin-svelte": "^2.0.2",
     "esbuild-plugin-ignore": "^1.1.1",
     "esbuild-svelte": "^0.7.3",
