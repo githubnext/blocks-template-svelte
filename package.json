@@ -6,12 +6,12 @@
     "start": "node scripts/start.mjs",
     "build": "node scripts/build.js"
   },
-  "dependencies": {
-  },
+  "dependencies": {},
   "devDependencies": {
     "@githubnext/blocks": "^2.3.4",
     "@githubnext/blocks-runtime": "^1.0.0",
     "@sveltejs/vite-plugin-svelte": "^2.0.2",
+    "esbuild-plugin-ignore": "^1.1.1",
     "esbuild-svelte": "^0.7.3",
     "svelte": "^3.55.0",
     "svelte-preprocess": "^5.0.0",

@@ -1,4 +1,5 @@
 const esbuild = require("esbuild");
+const ignorePlugin = require("esbuild-plugin-ignore");
 const sveltePlugin = require("esbuild-svelte");
 const sveltePreprocess = require("svelte-preprocess");
 const path = require("path");
@@ -16,6 +17,7 @@ const build = async () => {
     const stdin = {
       resolveDir: process.cwd(),
       contents: `
+    "use strict";
     import Component from "./${block.entry}";
 
     const root = document.getElementById("root");
@@ -36,9 +38,11 @@ const build = async () => {
       bundle: true,
       outfile: `dist/${block.id}/index.js`,
       format: "iife",
-      plugins: [sveltePlugin({ preprocess: sveltePreprocess({}) })],
+      plugins: [
+        sveltePlugin({ preprocess: sveltePreprocess({}) }),
+        ignorePlugin([{ resourceRegExp: /@githubnext\/blocks/ }]),
+      ],
       globalName: "VanillaBlockBundle",
-      external: ["@githubnext/blocks"],
       minify: true,
     });
   });
