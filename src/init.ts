@@ -5,7 +5,7 @@ import "./index.css";
 
 // redirect from the server to the production blocks frame
 if (window === window.top) {
-  window.location.href = `https://blocks.githubnext.com/?devServer=${encodeURIComponent(
+  window.location.href = `https://blocks.githubnext.com/githubnext/blocks?devServer=${encodeURIComponent(
     window.location.href
   )}`;
 }
