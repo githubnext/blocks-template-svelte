@@ -56,8 +56,14 @@ const getBlockComponentWithParentContext = (
         }
       }
 
-      options.props.context = context;
-      super(options);
+      const fullOptions = {
+        ...options,
+        props: {
+          ...options.props,
+          context,
+        },
+      };
+      super(fullOptions);
     }
   }
   return BlockComponentWithParentContext;
