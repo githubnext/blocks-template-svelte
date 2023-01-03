@@ -1,5 +1,6 @@
-import { Block } from "@githubnext/blocks";
+import { Block, FileContext, FolderContext } from "@githubnext/blocks";
 import { init } from "@githubnext/blocks-runtime";
+import BlockComponent from "./BlockComponent.svelte";
 
 import "./index.css";
 
@@ -18,17 +19,46 @@ const loadDevServerBlock = async (block: Block) => {
   const importContent = imports[importPath];
   const content = await importContent();
 
-  console.log({ content });
-
   let component;
 
   return (props) => {
+    const fullProps = {
+      ...props,
+      BlockComponent: getBlockComponentWithParentContext(props.context),
+    };
     if (component) {
-      component.$set(props);
+      component.$set(fullProps);
     } else {
-      component = new content.default({ target: root, props });
+      component = new content.default({ target: root, props: fullProps });
     }
   };
 };
 
 init(loadDevServerBlock);
+
+const getBlockComponentWithParentContext = (
+  parentContext?: FileContext | FolderContext
+) => {
+  class BlockComponentWithParentContext extends BlockComponent {
+    constructor(options) {
+      let context = {
+        ...(parentContext || {}),
+        ...(options.parentContext || {}),
+      };
+
+      if (parentContext) {
+        // clear sha if viewing content from another repo
+        const parentRepo = [parentContext.owner, parentContext.repo].join("/");
+        const childRepo = [context.owner, context.repo].join("/");
+        const isSameRepo = parentRepo === childRepo;
+        if (!isSameRepo) {
+          context.sha = options.context?.sha || "HEAD";
+        }
+      }
+
+      options.props.context = context;
+      super(options);
+    }
+  }
+  return BlockComponentWithParentContext;
+};
