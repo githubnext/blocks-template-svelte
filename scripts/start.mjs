@@ -11,8 +11,6 @@ const argv = minimist(process.argv.slice(2));
 process.env.BABEL_ENV = "development";
 process.env.NODE_ENV = "development";
 
-// require("./config/env");
-
 const main = async () => {
   const port = argv.port || process.env.PORT || 4000;
   const app = express();
