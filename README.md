@@ -27,7 +27,7 @@ This template includes one example File Block and one Folder Block. The dev serv
 
 ## Under the hood
 
-With this template, Blocks are [Svelte](https://https://svelte.dev/) components. They have a well-defined contract with their surroundings, and receive a [fixed set of props](TODO) when they are instantiated. They are developed in [TypeScript](https://www.typescriptlang.org/), and bundled with [Vite](https://vitejs.dev/).
+With this template, Blocks are [Svelte](https://svelte.dev/) components. They have a well-defined contract with their surroundings, and receive a [fixed set of props](TODO) when they are instantiated. They are developed in [TypeScript](https://www.typescriptlang.org/), and bundled with [Vite](https://vitejs.dev/).
 
 ## More Info
 
