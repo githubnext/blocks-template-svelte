@@ -1,6 +1,6 @@
 <script lang="ts">
   import { FileBlockProps } from '@githubnext/blocks';
-  let { content } = $$props as FileBlockProps;
+  export let { content } = $$props as FileBlockProps;
 </script>
 
 <h1>Hello from Svelte!</h1>
