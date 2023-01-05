@@ -1461,7 +1461,7 @@ esbuild@^0.15.9:
     esbuild-windows-64 "0.15.14"
     esbuild-windows-arm64 "0.15.14"
 
-esbuild@^0.16.3:
+esbuild@^0.16.14, esbuild@^0.16.3:
   version "0.16.14"
   resolved "https://registry.yarnpkg.com/esbuild/-/esbuild-0.16.14.tgz#366249a0a0fd431d3ab706195721ef1014198919"
   integrity sha512-6xAn3O6ZZyoxZAEkwfI9hw4cEqSr/o1ViJtnkvImVkblmUN65Md04o0S/7H1WNu1XGf1Cjij/on7VO4psIYjkw==
