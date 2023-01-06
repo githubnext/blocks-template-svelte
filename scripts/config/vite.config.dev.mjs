@@ -25,6 +25,15 @@ const getViteConfigDev = (port) => ({
     svelte({
       preprocess: preprocess({}),
     }),
+    {
+      name: "configure-response-headers",
+      configureServer: (server) => {
+        server.middlewares.use((_req, res, next) => {
+          res.setHeader("Access-Control-Allow-Private-Network", "true");
+          next();
+        });
+      },
+    },
   ],
 });
 
