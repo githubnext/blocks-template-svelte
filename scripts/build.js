@@ -7,8 +7,6 @@ const path = require("path");
 process.env.BABEL_ENV = "production";
 process.env.NODE_ENV = "production";
 
-require("./config/env");
-
 const build = async () => {
   const blocksConfigPath = path.resolve(process.cwd(), "blocks.config.json");
   const blocksConfig = require(blocksConfigPath);
