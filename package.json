@@ -4,6 +4,7 @@
   "license": "MIT",
   "scripts": {
     "start": "node scripts/start.mjs",
+    "start-https": "node scripts/start.mjs --https=true",
     "build": "node scripts/build.js"
   },
   "dependencies": {},
@@ -11,6 +12,7 @@
     "@githubnext/blocks": "^2.3.4",
     "@githubnext/blocks-runtime": "^1.0.3",
     "@sveltejs/vite-plugin-svelte": "^2.0.2",
+    "@vitejs/plugin-basic-ssl": "^1.0.1",
     "esbuild": "^0.16.14",
     "esbuild-plugin-ignore": "^1.1.1",
     "esbuild-svelte": "^0.7.3",
