@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { FileContext, FolderContext, Block } from "@githubnext/blocks";
+  import type { FileContext, FolderContext, Block } from "@githubnext/blocks";
 
   export let context: FileContext | FolderContext;
   export let block: Block;

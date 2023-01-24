@@ -1,4 +1,4 @@
-import { Block, FileContext, FolderContext } from "@githubnext/blocks";
+import type { Block, FileContext, FolderContext } from "@githubnext/blocks";
 import { init } from "@githubnext/blocks-runtime";
 import BlockComponent from "./BlockComponent.svelte";
 
@@ -29,6 +29,7 @@ const loadDevServerBlock = async (block: Block) => {
     if (component) {
       component.$set(fullProps);
     } else {
+      // @ts-ignore
       component = new content.default({ target: root, props: fullProps });
     }
   };
