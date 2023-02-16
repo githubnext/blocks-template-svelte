@@ -34,7 +34,7 @@ const build = async () => {
     return esbuild.build({
       stdin,
       bundle: true,
-      outfile: `dist/${block.id}/index.js`,
+      outdir: `dist/${block.id}/index.js`,
       format: "iife",
       plugins: [
         sveltePlugin({ preprocess: sveltePreprocess({}) }),
